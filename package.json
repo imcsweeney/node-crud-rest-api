@@ -1,0 +1,52 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "demo rest api",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha tests/**/*Tests.js",
+    "start": "npm-run-all --parallel run lint:watch",
+    "run": "nodemon app.js",
+    "lint:watch": "npm run lint --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imcsweeney/node-rest-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imcsweeney/node-rest-api/issues"
+  },
+  "homepage": "https://github.com/imcsweeney/node-rest-api#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.5",
+    "nodemon": "^1.19.4",
+    "npm-run-all": "^4.1.5"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-watch": "^6.0.1",
+    "mocha": "^6.2.2",
+    "should": "^13.2.3",
+    "sinon": "^7.5.0",
+    "supertest": "^4.0.2"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000
+    }
+  }
+}
